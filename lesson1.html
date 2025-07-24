@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: The Building Blocks - Learn Jamaican</title>
+    
+    <!-- Tailwind CSS for rapid, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat for headings, Lato for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles to complement Tailwind */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f8fafc; /* A slightly softer background */
+            color: #333333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Style for lesson content to improve readability */
+        .lesson-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.75;
+            font-size: 1.125rem; /* Slightly larger for readability */
+        }
+        .lesson-content ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1.25rem;
+        }
+        .lesson-content li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.125rem;
+        }
+        .lesson-content li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #00796B;
+            font-weight: bold;
+        }
+        .jamaican-word {
+            font-weight: bold;
+            color: #00796B;
+        }
+        .pronunciation-guide {
+            font-style: italic;
+            color: #555;
+        }
+        /* Alphabet Grid Styles */
+        .alphabet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        .alphabet-letter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: bold;
+            height: 60px;
+            border-radius: 0.5rem;
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+        }
+        .alphabet-letter-unused {
+            background-color: #f1f5f9;
+            color: #94a3b8;
+            text-decoration: line-through;
+        }
+        .alphabet-letter-special {
+            background-color: #cceee9;
+            color: #00796B;
+            border-color: #00796B;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div>
+                <a href="index.html" class="text-2xl font-bold text-[#00796B]">Learn Jamaican</a>
+                <p class="text-xs text-gray-500 tracking-tight -mt-1">Read it. Write it. Own it.</p>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html#lessons" class="text-gray-600 hover:text-[#00796B] transition-colors">Lessons</a>
+                <a href="index.html#story" class="text-gray-600 hover:text-[#00796B] transition-colors">Our Story</a>
+                <a href="index.html#blog" class="text-gray-600 hover:text-[#00796B] transition-colors">Blog</a>
+                <a href="#" class="bg-[#FFB300] text-white font-bold py-2 px-4 rounded-full hover:bg-opacity-90 transition-all">Get Started</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="index.html#lessons" class="block py-2 text-gray-600 hover:text-[#00796B]">Lessons</a>
+            <a href="index.html#story" class="block py-2 text-gray-600 hover:text-[#00796B]">Our Story</a>
+            <a href="index.html#blog" class="block py-2 text-gray-600 hover:text-[#00796B]">Blog</a>
+            <a href="#" class="block mt-2 bg-[#FFB300] text-white text-center font-bold py-2 px-4 rounded-full hover:bg-opacity-90">Get Started</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Lesson Content Section -->
+        <section class="py-12 md:py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl">
+                    <h1 class="text-3xl md:text-5xl font-bold text-[#00796B] mb-4">Lesson 1: The Building Blocks</h1>
+                    <p class="text-xl text-gray-600 mb-8">Welcome! If you can speak Jamaican, you already know the most important part. This lesson will connect your voice to the written word using the official Cassidy-JLU writing system.</p>
+                    
+                    <div class="border-t border-gray-200 mt-8 pt-8 lesson-content">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4">The Jamaican Alphabet</h2>
+                        <p>The writing system uses the familiar English alphabet, but it is much more consistent. One letter always makes one sound. You'll notice that the letters <strong class="text-red-600">C</strong>, <strong class="text-red-600">Q</strong>, and <strong class="text-red-600">X</strong> are not used for writing Jamaican words. Instead, we use other letters to make their sounds.</p>
+                        
+                        <div class="alphabet-grid">
+                            <div class="alphabet-letter">A</div>
+                            <div class="alphabet-letter">B</div>
+                            <div class="alphabet-letter alphabet-letter-unused">C</div>
+                            <div class="alphabet-letter">D</div>
+                            <div class="alphabet-letter">E</div>
+                            <div class="alphabet-letter">F</div>
+                            <div class="alphabet-letter">G</div>
+                            <div class="alphabet-letter">H</div>
+                            <div class="alphabet-letter">I</div>
+                            <div class="alphabet-letter">J</div>
+                            <div class="alphabet-letter">K</div>
+                            <div class="alphabet-letter">L</div>
+                            <div class="alphabet-letter">M</div>
+                            <div class="alphabet-letter">N</div>
+                            <div class="alphabet-letter">O</div>
+                            <div class="alphabet-letter">P</div>
+                            <div class="alphabet-letter alphabet-letter-unused">Q</div>
+                            <div class="alphabet-letter">R</div>
+                            <div class="alphabet-letter">S</div>
+                            <div class="alphabet-letter">T</div>
+                            <div class="alphabet-letter">U</div>
+                            <div class="alphabet-letter">V</div>
+                            <div class="alphabet-letter">W</div>
+                            <div class="alphabet-letter alphabet-letter-unused">X</div>
+                            <div class="alphabet-letter">Y</div>
+                            <div class="alphabet-letter">Z</div>
+                        </div>
+
+                        <h3 class="text-2xl font-bold mt-12 mb-4">New Combination Letters</h3>
+                        <p>In addition to the standard alphabet, there are four special two-letter combinations that represent a single sound. Think of these as new letters in our alphabet.</p>
+                        
+                        <div class="alphabet-grid">
+                            <div class="alphabet-letter alphabet-letter-special">CH</div>
+                            <div class="alphabet-letter alphabet-letter-special">SH</div>
+                            <div class="alphabet-letter alphabet-letter-special">ZH</div>
+                            <div class="alphabet-letter alphabet-letter-special">KW</div>
+                        </div>
+                        <ul>
+                            <li><b class="jamaican-word">CH</b> makes a 'ch' sound (e.g., <i class="jamaican-word">choch</i> for 'church').</li>
+                            <li><b class="jamaican-word">SH</b> makes a 'sh' sound (e.g., <i class="jamaican-word">shuu</i> for 'shoe').</li>
+                            <li><b class="jamaican-word">ZH</b> makes a 'zh' sound, like the 's' in 'vision' (e.g., <i class="jamaican-word">vizhan</i>).</li>
+                            <li><b class="jamaican-word">KW</b> makes a 'kw' sound (e.g., <i class="jamaican-word">kwiin</i> for 'queen').</li>
+                        </ul>
+
+                        <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">The Vowel Sounds</h2>
+                        <p>Jamaican has five basic, pure vowel sounds, which are always short. Unlike in English, these vowels don't change their sound. Let's look at each one.</p>
+
+                        <!-- Vowel Table -->
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-sm">
+                                <thead class="bg-gray-100">
+                                    <tr>
+                                        <th class="py-3 px-4 border-b text-left text-sm font-bold text-gray-600 uppercase">Vowel</th>
+                                        <th class="py-3 px-4 border-b text-left text-sm font-bold text-gray-600 uppercase">Sounds Like</th>
+                                        <th class="py-3 px-4 border-b text-left text-sm font-bold text-gray-600 uppercase">Example Word</th>
+                                        <th class="py-3 px-4 border-b text-left text-sm font-bold text-gray-600 uppercase">In a Sentence</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-4 px-4 border-b text-2xl font-bold text-[#00796B]">a</td>
+                                        <td class="py-4 px-4 border-b pronunciation-guide">'ah' as in 'f<underline>a</underline>ther'</td>
+                                        <td class="py-4 px-4 border-b jamaican-word">gyal</td>
+                                        <td class="py-4 px-4 border-b">Di <b class="jamaican-word">gyal</b> a sing. (The girl is singing.)</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-4 px-4 border-b text-2xl font-bold text-[#00796B]">e</td>
+                                        <td class="py-4 px-4 border-b pronunciation-guide">'eh' as in 'b<underline>e</underline>d'</td>
+                                        <td class="py-4 px-4 border-b jamaican-word">dem</td>
+                                        <td class="py-4 px-4 border-b">A fi <b class="jamaican-word">dem</b> buk. (It's their book.)</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-4 px-4 border-b text-2xl font-bold text-[#00796B]">i</td>
+                                        <td class="py-4 px-4 border-b pronunciation-guide">'ee' as in 's<underline>ee</underline>'</td>
+                                        <td class="py-4 px-4 border-b jamaican-word">likl</td>
+                                        <td class="py-4 px-4 border-b">Gi mi a <b class="jamaican-word">likl</b> wata. (Give me a little water.)</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-4 px-4 border-b text-2xl font-bold text-[#00796B]">o</td>
+                                        <td class="py-4 px-4 border-b pronunciation-guide">'o' as in 'g<underline>o</underline>'</td>
+                                        <td class="py-4 px-4 border-b jamaican-word">kot</td>
+                                        <td class="py-4 px-4 border-b">Im <b class="jamaican-word">kot</b> di trii. (He cut the tree.)</td>
+                                    </tr>
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="py-4 px-4 border-b text-2xl font-bold text-[#00796B]">u</td>
+                                        <td class="py-4 px-4 border-b pronunciation-guide">'oo' as in 'g<underline>oo</underline>d'</td>
+                                        <td class="py-4 px-4 border-b jamaican-word">gud</td>
+                                        <td class="py-4 px-4 border-b">Dat de <b class="jamaican-word">gud</b>. (That is good.)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3 class="text-2xl font-bold mt-12 mb-4">Long Vowels</h3>
+                        <p>To make a vowel sound longer, you simply write it twice. This is another way the writing system is very consistent.</p>
+                        <ul>
+                           <li><b class="jamaican-word">aa</b> makes a longer 'ah' sound. Example: <b class="jamaican-word">baal</b> (ball).</li>
+                           <li><b class="jamaican-word">ee</b> makes a longer 'eh' sound. Example: <b class="jamaican-word">gweehn</b> (going).</li>
+                           <li><b class="jamaican-word">ii</b> makes a longer 'ee' sound. Example: <b class="jamaican-word">iit</b> (eat).</li>
+                           <li><b class="jamaican-word">oo</b> makes a longer 'oh' sound. Example: <b class="jamaican-word">eloo</b> (hello).</li>
+                           <li><b class="jamaican-word">uu</b> makes a longer 'oo' sound. Example: <b class="jamaican-word">shuuz</b> (shoes).</li>
+                        </ul>
+
+                        <h3 class="text-2xl font-bold mt-12 mb-4">Combination Vowels (Diphthongs)</h3>
+                        <p>Four vowel combinations are commonly used to make distinct sounds where two vowel sounds glide into one another.</p>
+                        <ul>
+                           <li><b class="jamaican-word">IE</b> makes an 'ay' sound, like in the English word 'g<underline>a</underline>te'. Example: <b class="jamaican-word">giet</b> (gate).</li>
+                           <li><b class="jamaican-word">UO</b> makes an 'u-ho' sound, like in the English word 'b<underline>oa</underline>t'. Example: <b class="jamaican-word">buot</b> (boat).</li>
+                           <li><b class="jamaican-word">AI</b> makes an 'eye' sound, like in the English word 'b<underline>uy</underline>'. Example: <b class="jamaican-word">bait</b> (bite).</li>
+                           <li><b class="jamaican-word">OU</b> makes an 'ow' sound, like in the English word 'c<underline>ow</underline>'. Example: <b class="jamaican-word">bout</b> (about).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#333333] text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-bold text-lg text-white">Learn Jamaican</p>
+            <div class="flex justify-center space-x-6 my-4">
+                <a href="index.html#lessons" class="hover:text-white">Lessons</a>
+                <a href="index.html#story" class="hover:text-white">Our Story</a>
+                <a href="index.html#blog" class="hover:text-white">Blog</a>
+                <a href="#" class="hover:text-white">Contact</a>
+            </div>
+            <p class="text-sm text-gray-400">&copy; 2025 Learn Jamaican. All Rights Reserved. Big up yuself!</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
