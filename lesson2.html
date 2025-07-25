@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2: Rules for Writing - Learn Jamaican</title>
+    
+    <!-- Tailwind CSS for rapid, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat for headings, Lato for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles to complement Tailwind */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f8fafc; /* A slightly softer background */
+            color: #333333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Style for lesson content to improve readability */
+        .lesson-content p, .lesson-content li {
+            margin-bottom: 1.25rem;
+            line-height: 1.75;
+            font-size: 1.125rem; /* Slightly larger for readability */
+        }
+        .lesson-content ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .lesson-content li {
+            position: relative;
+            padding-left: 1.75rem;
+        }
+        .lesson-content li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #FFB300;
+            font-weight: bold;
+        }
+        .jamaican-word {
+            font-weight: bold;
+            color: #00796B;
+        }
+        .english-translation {
+            font-style: italic;
+            color: #555;
+        }
+        .rule-box {
+            background-color: #fff;
+            border-left: 4px solid #00796B;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+        .example-table {
+            min-width: 100%;
+            margin-top: 1rem;
+            border-collapse: collapse;
+        }
+        .example-table th, .example-table td {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+        }
+        .example-table th {
+            background-color: #f1f5f9;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div>
+                <a href="index.html" class="text-2xl font-bold text-[#00796B]">Learn Jamaican</a>
+                <p class="text-xs text-gray-500 tracking-tight -mt-1">Read it. Write it. Own it.</p>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html#lessons" class="text-gray-600 hover:text-[#00796B] transition-colors">Lessons</a>
+                <a href="index.html#story" class="text-gray-600 hover:text-[#00796B] transition-colors">Our Story</a>
+                <a href="index.html#blog" class="text-gray-600 hover:text-[#00796B] transition-colors">Blog</a>
+                <a href="#" class="bg-[#FFB300] text-white font-bold py-2 px-4 rounded-full hover:bg-opacity-90 transition-all">Get Started</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="index.html#lessons" class="block py-2 text-gray-600 hover:text-[#00796B]">Lessons</a>
+            <a href="index.html#story" class="block py-2 text-gray-600 hover:text-[#00796B]">Our Story</a>
+            <a href="index.html#blog" class="block py-2 text-gray-600 hover:text-[#00796B]">Blog</a>
+            <a href="#" class="block mt-2 bg-[#FFB300] text-white text-center font-bold py-2 px-4 rounded-full hover:bg-opacity-90">Get Started</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Lesson Content Section -->
+        <section class="py-12 md:py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl">
+                    <h1 class="text-3xl md:text-5xl font-bold text-[#00796B] mb-4">Lesson 2: Rules for Writing</h1>
+                    <p class="text-xl text-gray-600 mb-8">Now that you know the sounds, let's look at the rules that bring them together. These simple rules will help you read and write Jamaican with confidence.</p>
+                    
+                    <div class="border-t border-gray-200 mt-8 pt-8 lesson-content">
+                        
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4">Core Principles</h2>
+                        <div class="rule-box">
+                            <h3 class="text-xl font-bold mb-2">Rule 1: One Sound, One Symbol</h3>
+                            <p>This is the most important rule. The Jamaican writing system is phonetic, meaning we write words exactly as they sound. Each letter or letter combination has only one sound. Always.</p>
+                        </div>
+                        <div class="rule-box">
+                            <h3 class="text-xl font-bold mb-2">Rule 2: No Double Consonants</h3>
+                            <p>We never double consonants in a word. This simplifies spelling greatly.</p>
+                            <ul>
+                                <li><b class="jamaican-word">likl</b> <span class="english-translation">(not 'likkle')</span></li>
+                                <li><b class="jamaican-word">beta</b> <span class="english-translation">(not 'better')</span></li>
+                                <li><b class="jamaican-word">mata</b> <span class="english-translation">(not 'matter')</span></li>
+                            </ul>
+                        </div>
+
+                        <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Structural Rules</h2>
+                        <div class="rule-box">
+                            <h3 class="text-xl font-bold mb-2">Word Endings</h3>
+                            <p>One of the biggest differences from English is how we handle the ends of words. We often simplify them to match how we speak.</p>
+                            <ul>
+                                <li><strong>Dropping the final consonant:</strong> Words that end with a consonant cluster in English often drop the last letter.
+                                    <br><span class="jamaican-word">han</span> <span class="english-translation">(from 'hand')</span>, <span class="jamaican-word">sof</span> <span class="english-translation">(from 'soft')</span>, <span class="jamaican-word">kuol</span> <span class="english-translation">(from 'cold')</span>.
+                                </li>
+                                <li><strong>The '-ing' ending becomes '-in':</strong>
+                                    <br><span class="jamaican-word">taakin</span> <span class="english-translation">(talking)</span>, <span class="jamaican-word">gwaan</span> <span class="english-translation">(going on)</span>, <span class="jamaican-word">siin</span> <span class="english-translation">(seeing)</span>.
+                                </li>
+                                <li><strong>The '-er' ending becomes '-a':</strong>
+                                    <br><span class="jamaican-word">wata</span> <span class="english-translation">(water)</span>, <span class="jamaican-word">tiicha</span> <span class="english-translation">(teacher)</span>, <span class="jamaican-word">beta</span> <span class="english-translation">(better)</span>.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="rule-box">
+                            <h3 class="text-xl font-bold mb-2">Hyphens Connect Ideas</h3>
+                            <p>We use hyphens to link short words that are spoken together as a single thought or function. This makes reading much smoother.</p>
+                            <ul>
+                                <li><strong>Verbs of being/doing:</strong>
+                                    <br><span class="jamaican-word">a-go</span> <span class="english-translation">(am/is/are going to)</span>, <span class="jamaican-word">de-ya</span> <span class="english-translation">(am/is/are here)</span>.
+                                    <br>Example: <i class="jamaican-word">Mi a-go iit.</i> (I am going to eat.)
+                                </li>
+                                <li><strong>Possession:</strong>
+                                    <br><span class="jamaican-word">fi-mi</span> <span class="english-translation">(for me/mine)</span>, <span class="jamaican-word">fi-yu</span> <span class="english-translation">(for you/yours)</span>.
+                                    <br>Example: <i class="jamaican-word">A fi-mi buk dat.</i> (That is my book.)
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="rule-box">
+                            <h3 class="text-xl font-bold mb-2">No Apostrophe 's' for Possession</h3>
+                            <p>To show who owns something, we simply put the owner before the item. There is no need for an apostrophe 's' like in English.</p>
+                            <ul>
+                                <li><b class="jamaican-word">Di uman yaad</b> <span class="english-translation">(The woman's yard)</span></li>
+                                <li><b class="jamaican-word">Pita kyar</b> <span class="english-translation">(Peter's car)</span></li>
+                            </ul>
+                        </div>
+
+                         <div class="rule-box">
+                            <h3 class="text-xl font-bold mb-2">A GO vs. A-GO vs. AGO</h3>
+                            <p>The context of these words is important. They look similar but have very different meanings based on how they are written.</p>
+                            <ul>
+                                <li><b class="jamaican-word">a go</b> (two words): Means you are physically going somewhere.
+                                    <br><i>Mi <b class="jamaican-word">a go</b> a maakit tumaro.</i>
+                                </li>
+                                <li><b class="jamaican-word">a-go</b> (hyphenated): Means you are "going to do" something.
+                                    <br><i>Mi <b class="jamaican-word">a-go</b> kuk som rais an piis fi dina.</i>
+                                </li>
+                                <li><b class="jamaican-word">ago</b> (one word): Refers to a time in the past.
+                                    <br><i>Ten ier <b class="jamaican-word">ago</b> dem staat di bizniz.</i>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Specific Letter Rules</h2>
+                        
+                        <div class="rule-box">
+                            <h3 class="text-xl font-bold mb-2">The 'OR' Sound Exception</h3>
+                            <p>While most letters have one sound, the combination <b class="jamaican-word">or</b> can sometimes be pronounced with an <b class="jamaican-word">er</b> sound, especially when it is followed by a consonant.</p>
+                            <table class="example-table">
+                                <thead>
+                                    <tr><th>Normal 'or' Sound (Vowel Follows)</th><th>'er' Sound (Consonant Follows)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><span class="jamaican-word">Kori</span></td><td><span class="jamaican-word">Por-fek</span></td></tr>
+                                    <tr><td><span class="jamaican-word">Wori</span></td><td><span class="jamaican-word">Worl</span></td></tr>
+                                    <tr><td><span class="jamaican-word">Orijinal</span></td><td><span class="jamaican-word">Gorl</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="rule-box">
+                            <h3 class="text-xl font-bold mb-2">'S' vs 'Z' at the End of Words</h3>
+                            <p>The letter you use at the end of a word depends on the sound. 'S' makes a soft, hissing sound (no vibration in your throat). 'Z' makes a hard, buzzing sound (you can feel the vibration).</p>
+                            <table class="example-table">
+                                <thead>
+                                    <tr><th>Soft 'S' Sound (No Vibration)</th><th>Hard 'Z' Sound (Vibration)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><span class="jamaican-word">Tangks</span></td><td><span class="jamaican-word">Vaibz</span></td></tr>
+                                    <tr><td><span class="jamaican-word">Baks</span></td><td><span class="jamaican-word">Biiz</span></td></tr>
+                                    <tr><td><span class="jamaican-word">Nuots</span></td><td><span class="jamaican-word">Nuoz</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="rule-box">
+                            <h3 class="text-xl font-bold mb-2">Special Consonant Sounds</h3>
+                            <ul>
+                                <li><strong>The 'HN' Nasal Sound:</strong> This sound always comes after a vowel and is made in your nose.
+                                    <br><span class="jamaican-word">weehn</span>, <span class="jamaican-word">iihn</span>, <span class="jamaican-word">duohn</span>, <span class="jamaican-word">kyaahn</span>, <span class="jamaican-word">waahn</span>.
+                                </li>
+                                <li><strong>The 'NG' Sound:</strong> This is a single sound, different from a hard 'g'.
+                                    <br><span class="jamaican-word">sing</span>, <span class="jamaican-word">ting</span>. In words like <span class="jamaican-word">fing-ga</span> or <span class="jamaican-word">mang-go</span>, you hear both the 'ng' sound and a separate hard 'g' sound.
+                                </li>
+                                 <li><strong>The 'G' Sound:</strong> Always a hard 'g' sound, as in <span class="jamaican-word">giet</span> (gate) or <span class="jamaican-word">gud</span> (good). It never makes a soft 'j' sound. For that, use 'j'.</li>
+                                <li><strong>The 'J' Sound:</strong> Always a soft 'j' sound, as in <span class="jamaican-word">joj</span> (judge) or <span class="jamaican-word">jem</span> (gem).</li>
+                                <li><strong>The Letter 'X':</strong> The letter 'x' is not used. Instead, we write the sounds we hear using <b class="jamaican-word">ks</b> or <b class="jamaican-word">gz</b>.
+                                    <br>Examples: <span class="jamaican-word">ekspek</span> (expect), <span class="jamaican-word">egzakli</span> (exactly).
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="rule-box">
+                            <h3 class="text-xl font-bold mb-2">Using 'Y' and 'W'</h3>
+                            <p>These letters have two important jobs.</p>
+                             <ul>
+                                <li><strong>As Vowel Separators:</strong> When two vowels that don't form a standard pair meet, use 'y' or 'w' to separate them so each keeps its own sound.
+                                    <br><span class="jamaican-word">sai-y-ans</span>, <span class="jamaican-word">uobi-y-a</span>, <span class="jamaican-word">fai-y-a</span>, <span class="jamaican-word">No-w-a</span>, <span class="jamaican-word">flo-w-az</span>.
+                                </li>
+                                <li><strong>As Standard Consonants:</strong> Use them for their normal sounds at the beginning of words.
+                                    <br><span class="jamaican-word">nyam</span>, <span class="jamaican-word">kyan</span>, <span class="jamaican-word">yuuz</span>, <span class="jamaican-word">gwaan</span>, <span class="jamaican-word">wikid</span>.
+                                </li>
+                            </ul>
+                            <p class="mt-4"><strong>Note:</strong> You will not find 'y' at the end of a word to make an 'ee' sound. That sound always comes from the letter 'i' (e.g., <span class="jamaican-word">foni, moni, dangki</span>).</p>
+                        </div>
+
+                        <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Summary of English vs. Jamaican Spelling</h2>
+                        <p>Here is a quick reference guide for other common English spelling patterns and their Jamaican equivalents.</p>
+                        <table class="example-table">
+                            <thead>
+                                <tr><th>English Pattern</th><th>Jamaican Rule</th><th>Example</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>'c'</td><td>Use <b class="jamaican-word">s</b> (for soft c) or <b class="jamaican-word">k</b> (for hard c)</td><td><span class="jamaican-word">fies</span> / <span class="jamaican-word">kiek</span></td></tr>
+                                <tr><td>'ck'</td><td>Use <b class="jamaican-word">k</b></td><td><span class="jamaican-word">lik</span> / <span class="jamaican-word">pik</span> / <span class="jamaican-word">sik</span></td></tr>
+                                <tr><td>'dr'</td><td>Use <b class="jamaican-word">j</b> or <b class="jamaican-word">jr</b></td><td><span class="jamaican-word">jongk</span> / <span class="jamaican-word">jom</span> / <span class="jamaican-word">jres</span></td></tr>
+                                <tr><td>Silent 'h'</td><td>Never use 'h' by itself to start a word</td><td><span class="jamaican-word">aat</span> / <span class="jamaican-word">ou</span> / <span class="jamaican-word">ous</span></td></tr>
+                                <tr><td>'q'</td><td>Use <b class="jamaican-word">kw</b></td><td><span class="jamaican-word">kwiin</span> / <span class="jamaican-word">kwik</span></td></tr>
+                                <tr><td>'-tion', '-tian'</td><td>Use <b class="jamaican-word">-shan</b></td><td><span class="jamaican-word">menshan</span> / <span class="jamaican-word">palitishan</span></td></tr>
+                                <tr><td>'-sion'</td><td>Use <b class="jamaican-word">-zhan</b> / <b class="jamaican-word">-shan</b> / <b class="jamaican-word">-jan</b></td><td><span class="jamaican-word">kanfyuuzhan</span> / <span class="jamaican-word">rilijan</span></td></tr>
+                                <tr><td>'tr', 'thr'</td><td>Use <b class="jamaican-word">ch</b> or <b class="jamaican-word">chr</b></td><td><span class="jamaican-word">chobl</span> / <span class="jamaican-word">chrii</span> / <span class="jamaican-word">chraiyal</span></td></tr>
+                                <tr><td>'x'</td><td>Use <b class="jamaican-word">ks</b> or <b class="jamaican-word">gz</b></td><td><span class="jamaican-word">ekspek</span> / <span class="jamaican-word">egzakli</span></td></tr>
+                            </tbody>
+                        </table>
+
+                        <p class="mt-12 text-center text-lg bg-yellow-100 text-yellow-800 p-4 rounded-lg">Memba di ruul dem fi riid an rait:<br>
+                        <strong>Wan leta mek wan soun, we neva chienj. Riid wa yu si. Rait wa yu ier.</strong><br>
+                        Onggl ting lef fi du nou, a fi yu "Praktis"!</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#333333] text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-bold text-lg text-white">Learn Jamaican</p>
+            <div class="flex justify-center space-x-6 my-4">
+                <a href="index.html#lessons" class="hover:text-white">Lessons</a>
+                <a href="index.html#story" class="hover:text-white">Our Story</a>
+                <a href="index.html#blog" class="hover:text-white">Blog</a>
+                <a href="#" class="hover:text-white">Contact</a>
+            </div>
+            <p class="text-sm text-gray-400">&copy; 2025 Learn Jamaican. All Rights Reserved. Big up yuself!</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
