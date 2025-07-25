@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story, Our Language - Learn Jamaican</title>
+    
+    <!-- Tailwind CSS for rapid, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat for headings, Lato for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles to complement Tailwind */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f8fafc;
+            color: #333333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .story-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.125rem;
+        }
+        .story-content blockquote {
+            border-left: 4px solid #FFB300;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div>
+                <a href="index.html" class="text-2xl font-bold text-[#00796B]">Learn Jamaican</a>
+                <p class="text-xs text-gray-500 tracking-tight -mt-1">Read it. Write it. Own it.</p>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html#lessons" class="text-gray-600 hover:text-[#00796B] transition-colors">Lessons</a>
+                <a href="index.html#story" class="text-gray-600 hover:text-[#00796B] transition-colors">Our Story</a>
+                <a href="index.html#blog" class="text-gray-600 hover:text-[#00796B] transition-colors">Blog</a>
+                <a href="#" class="bg-[#FFB300] text-white font-bold py-2 px-4 rounded-full hover:bg-opacity-90 transition-all">Get Started</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 B" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="index.html#lessons" class="block py-2 text-gray-600 hover:text-[#00796B]">Lessons</a>
+            <a href="index.html#story" class="block py-2 text-gray-600 hover:text-[#00796B]">Our Story</a>
+            <a href="index.html#blog" class="block py-2 text-gray-600 hover:text-[#00796B]">Blog</a>
+            <a href="#" class="block mt-2 bg-[#FFB300] text-white text-center font-bold py-2 px-4 rounded-full hover:bg-opacity-90">Get Started</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Story Content Section -->
+        <section class="py-12 md:py-20">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-lg shadow-xl">
+                    <h1 class="text-3xl md:text-5xl font-bold text-[#00796B] mb-4">Our Story, Our Language</h1>
+                    <p class="text-xl text-gray-600 mb-8">This journey began with a simple but powerful idea: if you can speak Jamaican, you can learn to read and write it.</p>
+                    
+                    <div class="border-t border-gray-200 mt-8 pt-8 story-content">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4">A Course for Us</h2>
+                        <p>This course is designed for you—the Jamaican speaker. Whether you are young or old, if you grew up speaking our beautiful language but never had the chance to see it written down, this is your space to learn. For too long, many of us were told that our language was "broken" or "improper." We were taught to be ashamed of our mother tongue, the very language that shaped our thoughts, our humour, and our heart.</p>
+                        
+                        <blockquote>"The ability to read and write your native language is a basic human right. It is the key to unlocking our own stories, our own literature, and our own power."</blockquote>
+
+                        <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">A Language of Strength and Structure</h2>
+                        <p>The truth is, the Jamaican language is not broken. It is a complete, expressive, and structured language, born from the resilience and creativity of our ancestors. Its journey from an oral tradition to a written form has been championed by cultural heroes and brilliant linguists.</p>
+                        <p>Cultural icon, the Hon. <strong>Louise "Miss Lou" Bennett-Coverley</strong>, fought to give our language the respect it deserves, celebrating its richness on stage and screen. At the same time, linguists like <strong>Frederic Cassidy</strong> and the <strong>Jamaican Language Unit (JLU)</strong> at UWI worked tirelessly to formally document its structure, creating the consistent writing system you are learning today.</p>
+
+                        <h2 class="text-2xl md:text-3xl font-bold mt-12 mb-4">Why This Matters</h2>
+                        <p>Learning to read and write in your own language is an act of empowerment. It allows you to read the Bible for yourself, write a card to a loved one, send a text message with perfect clarity, and engage with the growing body of Jamaican literature. It connects you to your heritage and gives you the confidence to express yourself fully, in speech and in writing.</p>
+                        <p>Welcome to the journey. It's time to own our language.</p>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="mt-12 border-t pt-8 flex justify-center">
+                        <a href="index.html#lessons" class="inline-block bg-[#00796B] text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all">
+                            ← Back to Lessons
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#333333] text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-bold text-lg text-white">Learn Jamaican</p>
+            <div class="flex justify-center space-x-6 my-4">
+                <a href="index.html#lessons" class="hover:text-white">Lessons</a>
+                <a href="index.html#story" class="hover:text-white">Our Story</a>
+                <a href="index.html#blog" class="hover:text-white">Blog</a>
+                <a href="#" class="hover:text-white">Contact</a>
+            </div>
+            <p class="text-sm text-gray-400">&copy; 2025 Learn Jamaican. All Rights Reserved. Big up yuself!</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
