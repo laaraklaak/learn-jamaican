@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Learn Jamaican</title>
+    
+    <!-- Tailwind CSS for rapid, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat for headings, Lato for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles to complement Tailwind */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f8fafc;
+            color: #333333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .post-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .coming-soon-card {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div>
+                <a href="index.html" class="text-2xl font-bold text-[#00796B]">Learn Jamaican</a>
+                <p class="text-xs text-gray-500 tracking-tight -mt-1">Read it. Write it. Own it.</p>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html#lessons" class="text-gray-600 hover:text-[#00796B] transition-colors">Lessons</a>
+                <a href="our-story.html" class="text-gray-600 hover:text-[#00796B] transition-colors">Our Story</a>
+                <a href="blog.html" class="text-gray-600 hover:text-[#00796B] transition-colors">Blog</a>
+                <a href="#" class="bg-[#FFB300] text-white font-bold py-2 px-4 rounded-full hover:bg-opacity-90 transition-all">Get Started</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="index.html#lessons" class="block py-2 text-gray-600 hover:text-[#00796B]">Lessons</a>
+            <a href="our-story.html" class="block py-2 text-gray-600 hover:text-[#00796B]">Our Story</a>
+            <a href="blog.html" class="block py-2 text-gray-600 hover:text-[#00796B]">Blog</a>
+            <a href="#" class="block mt-2 bg-[#FFB300] text-white text-center font-bold py-2 px-4 rounded-full hover:bg-opacity-90">Get Started</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Blog Header -->
+        <section class="bg-gray-100 py-12 md:py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-3xl md:text-5xl font-bold text-[#00796B]">From the Blog</h1>
+                <p class="text-lg text-gray-600 mt-2">Insights, stories, and tips on the Jamaican language and culture.</p>
+            </div>
+        </section>
+
+        <!-- Blog Posts Section -->
+        <section class="py-12 md:py-20">
+            <div class="container mx-auto px-6">
+                
+                <!-- Featured Post -->
+                <h2 class="text-2xl md:text-3xl font-bold mb-8">Featured Post</h2>
+                <a href="post1.html" class="block bg-white rounded-xl shadow-lg overflow-hidden md:flex group mb-16 post-card">
+                    <div class="md:w-1/2">
+                         <img src="https://placehold.co/800x600/00796b/ffffff?text=Jamaican+Culture" alt="Blog post image about Jamaican culture" class="h-64 w-full object-cover md:h-full group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 md:p-12 md:w-1/2 flex flex-col justify-center">
+                        <span class="text-sm font-bold text-[#00796B] uppercase">Language Deep Dive</span>
+                        <h3 class="text-2xl lg:text-3xl font-bold mt-2 mb-4">Why "Fi" is One of the Most Important Words in Patwa</h3>
+                        <p class="text-gray-600 mb-6">Dive deep into the versatility of the word 'fi'. From showing possession to indicating purpose, understanding 'fi' is a major step towards true fluency.</p>
+                        <span class="text-[#FFB300] font-bold self-start group-hover:underline">Read More →</span>
+                    </div>
+                </a>
+
+                <!-- Recent Posts -->
+                <h2 class="text-2xl md:text-3xl font-bold mb-8">Recent Posts</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Proverbs Post -->
+                    <div class="coming-soon-card bg-white rounded-xl shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/facc15/333333?text=Proverb" alt="Post image" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <span class="text-sm font-bold text-[#00796B] uppercase">Culture</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3">Jamaican Proverbs: Wit and Wisdom</h3>
+                            <p class="text-gray-400 text-sm font-bold">Coming Soon...</p>
+                        </div>
+                    </div>
+                    <!-- Food Post -->
+                    <div class="coming-soon-card bg-white rounded-xl shadow-lg overflow-hidden">
+                        <img src="https://placehold.co/600x400/e2e8f0/333333?text=Food" alt="Post image" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <span class="text-sm font-bold text-[#00796B] uppercase">Everyday Life</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3">Ordering Food: A Practical Guide</h3>
+                            <p class="text-gray-400 text-sm font-bold">Coming Soon...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#333333] text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-bold text-lg text-white">Learn Jamaican</p>
+            <div class="flex justify-center space-x-6 my-4">
+                <a href="index.html#lessons" class="hover:text-white">Lessons</a>
+                <a href="our-story.html" class="hover:text-white">Our Story</a>
+                <a href="blog.html" class="hover:text-white">Blog</a>
+                <a href="#" class="hover:text-white">Contact</a>
+            </div>
+            <p class="text-sm text-gray-400">&copy; 2025 Learn Jamaican. All Rights Reserved. Big up yuself!</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
