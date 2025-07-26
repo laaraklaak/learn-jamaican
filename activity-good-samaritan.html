@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity: The Good Samaritan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #f4f1eb; 
+            color: #2c2a29;
+        }
+        .prose { max-width: 65ch; color: #3f3c3a; }
+        .page-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            border: 1px solid #e7e5e4;
+        }
+        .nav-button {
+             background-color: #007B5F;
+             color: white;
+             font-weight: 600;
+             padding: 0.75rem 1.5rem;
+             border-radius: 0.5rem;
+             text-decoration: none;
+             display: inline-block;
+        }
+        .nav-button:hover { background-color: #005a46; }
+        .patois-word { color: #d97706; font-weight: 600; }
+        .highlight {
+            background-color: #fef3c7; /* amber-100 */
+            font-weight: 600;
+            color: #92400e; /* amber-800 */
+            padding: 0.1rem 0.25rem;
+            border-radius: 0.25rem;
+        }
+        .activity-answer {
+            display: none; /* Hidden by default */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+<div id="jamaican-writing-container">
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4">
+            <h1 class="text-3xl font-bold text-gray-800">Activity: The Good Samaritan</h1>
+            <p class="text-gray-600">Practice Your Reading Skills Series</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <section class="page-card p-8">
+            <h2 class="text-3xl font-bold text-center mb-2">Read the Passage</h2>
+            <p class="text-lg text-center text-gray-600 mb-8">Read the following passage carefully. Then, use the clues below to find the Jamaican words in the text.</p>
+            
+            <div id="passage-container" class="prose prose-lg mx-auto bg-gray-50 p-6 rounded-lg">
+                </div>
+
+            <div id="word-hunt-activity" class="pt-10 mt-10 border-t">
+                <h2 class="text-2xl font-semibold mb-4 text-center">Find the Jamaican Word</h2>
+                <div id="clue-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                    </div>
+            </div>
+        </section>
+
+        <div class="mt-12 flex justify-between items-center">
+            <a href="URL_TO_PRACTICE_HUB" class="nav-button bg-gray-500 hover:bg-gray-600">Try Another Challenge?</a>
+            <a href="URL_TO_YOUR_HOMEPAGE" class="font-semibold text-amber-600 hover:underline">Back to Homepage</a>
+        </div>
+    </main>
+</div>
+
+<script>
+    const passageText = `Jiizas ansa im se, “Wan man lef Jeruusilem an did a go a Jeriko. Pan di wie som tiif uol im op. Dem tek we aal we im av, biit im nieli kil im an lef im de fi ded. Wan priis did a go dong di siem ruod an wen im bok op pan di man, im kraas an go waak pan di neks said. Wan man we elp tek kier a Gad ous kom a di siem plies an si di man, bot im kraas go waak pan di neks said tu. Bot wan man we kom fram Samieriya did a chravl pan di siem ruod. Wen im riich wich paat di man de an si im, im fiil sari fi im. So, im gu uova tu di man, chuo aliv ail an wain pan im kot dem an ban dem op. Den im put di man pan im uona dangki, kyari im go a wan ges ous an tek kier a im. Di neks maanin im gi di uona fi di ges ous tuu silva kain, an se, ‘Tek kier a im, an wen mi kom bak, mi wi gi yu bak eni moni we yu spen fi luk aafa im.’”`;
+
+    const wordList = {
+        'wie': 'way', 'tiif': 'thief', 'uol': 'hold', 'biit': 'beat', 'nieli': 'nearly',
+        'priis': 'priest', 'siem': 'same', 'ruod': 'road', 'kraas': 'cross', 'waak': 'walk',
+        'said': 'side', 'kier': 'care', 'ous': 'house', 'samieriya': 'Samaria', 'jiizas': 'Jesus',
+        'riich': 'reach', 'paat': 'part', 'uova': 'over', 'chuo': 'throw', 'ail': 'oil',
+        'wain': 'wine', 'uona': 'owner', 'maanin': 'morning', 'kain': 'coin', 'aafa': 'after'
+    };
+
+    function setupActivity() {
+        const passageContainer = document.getElementById('passage-container');
+        const clueListContainer = document.getElementById('clue-list');
+        let highlightedWords = {};
+
+        // 1. Populate the passage with highlightable spans
+        passageContainer.innerHTML = '';
+        const words = passageText.split(/([,.:?!“ ”]+)/); 
+        words.forEach(word => {
+            let cleanWord = word.replace(/[,.:?!“ ”]/g, '').toLowerCase();
+            if (wordList[cleanWord] && !highlightedWords[cleanWord]) {
+                const span = document.createElement('span');
+                span.textContent = word;
+                span.id = `word-${cleanWord}`;
+                passageContainer.appendChild(span);
+                highlightedWords[cleanWord] = true;
+            } else {
+                passageContainer.appendChild(document.createTextNode(word));
+            }
+        });
+
+        // 2. Populate the clue list
+        clueListContainer.innerHTML = '';
+        for (const [patois, english] of Object.entries(wordList)) {
+            const clueDiv = document.createElement('div');
+            clueDiv.className = 'p-4 bg-gray-50 rounded-lg';
+            
+            const clueText = document.createElement('p');
+            clueText.className = 'font-semibold';
+            clueText.innerHTML = `${english} = <span class="activity-answer patois-word">${patois}</span>`;
+            clueDiv.appendChild(clueText);
+
+            const button = document.createElement('button');
+            button.className = 'text-blue-600 font-semibold mt-2';
+            button.textContent = 'Show Answer';
+            button.dataset.answerId = `word-${patois}`;
+            button.addEventListener('click', handleShowAnswerClick);
+            clueDiv.appendChild(button);
+
+            clueListContainer.appendChild(clueDiv);
+        }
+    }
+
+    function handleShowAnswerClick(event) {
+        const button = event.target;
+        const parent = button.parentElement;
+        const answerSpan = parent.querySelector('.activity-answer');
+        const wordId = button.dataset.answerId;
+        const wordInPassage = document.getElementById(wordId);
+
+        if (answerSpan.style.display === 'inline') {
+            answerSpan.style.display = 'none';
+            button.textContent = 'Show Answer';
+            if (wordInPassage) wordInPassage.classList.remove('highlight');
+        } else {
+            answerSpan.style.display = 'inline';
+            button.textContent = 'Hide Answer';
+            if (wordInPassage) wordInPassage.classList.add('highlight');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', setupActivity);
+</script>
+
+</body>
+</html>
