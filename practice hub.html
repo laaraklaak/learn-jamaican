@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Your Skills</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #f4f1eb; 
+            color: #2c2a29;
+        }
+        .page-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            border: 1px solid #e7e5e4;
+        }
+        .nav-button {
+             background-color: #007B5F;
+             color: white;
+             font-weight: 600;
+             padding: 0.75rem 1.5rem;
+             border-radius: 0.5rem;
+             text-decoration: none;
+             display: inline-block;
+             transition: background-color 0.2s;
+        }
+        .nav-button:hover { background-color: #005a46; }
+        .activity-card {
+            border: 1px solid #e7e5e4;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            background-color: #fafaf9;
+            transition: box-shadow 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .activity-card:hover {
+            border-color: #d1d5db;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+        .activity-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .activity-card p {
+            color: #4b5563;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #007B5F;
+            border-bottom: 2px solid #e7e5e4;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .prose {
+            max-width: 65ch;
+            color: #3f3c3a;
+        }
+        .patois-word {
+            color: #d97706;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+<div id="jamaican-writing-container">
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4">
+            <h1 class="text-3xl font-bold text-gray-800">Practice Your Skills</h1>
+            <p class="text-gray-600">Apply what you've learned with these activities.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        
+        <!-- Riid Wa Yu Si Section -->
+        <section class="mb-16">
+            <h2 class="section-title">Riid Wa Yu Si (Read What You See)</h2>
+            <p class="prose mx-auto mb-4">These activities will test your reading comprehension and your ability to recognize correctly spelled Jamaican words. Remember to pay close attention to the long vowels (like <b class="patois-word">aa</b> and <b class="patois-word">ii</b>) and the diphthongs (<b class="patois-word">ai, ie, ou, uo</b>).</p>
+            <div class="prose mx-auto mb-8">
+                <a href="URL_TO_LESSON_1" class="font-semibold text-amber-600 hover:underline">Need a refresher? Review Lesson 1: The Building Blocks &rarr;</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="activity-card">
+                    <h3>Reading Practice</h3>
+                    <p>Read a passage from the Bible in Patois and test your comprehension with a fun 'Find the Word' exercise.</p>
+                    <a href="URL_TO_ACTIVITY_2" class="nav-button mt-auto">Go to Activity &rarr;</a>
+                </div>
+
+                <div class="activity-card">
+                    <h3>Bible Books Crossword</h3>
+                    <p>Test your knowledge of the New Testament books with this fun and challenging crossword puzzle.</p>
+                    <a href="URL_TO_ACTIVITY_4" class="nav-button mt-auto">Go to Activity &rarr;</a>
+                </div>
+                
+                <!-- Placeholder -->
+                <div class="activity-card border-dashed">
+                    <h3 class="text-gray-400">Complete the Proverb</h3>
+                    <p class="text-gray-500">Coming soon! A fun puzzle where you arrange the words to form famous Jamaican proverbs.</p>
+                    <span class="nav-button bg-gray-300 cursor-not-allowed mt-auto">Coming Soon</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Rait Wa Yu Ier Section -->
+        <section>
+            <h2 class="section-title">Rait Wa Yu Ier (Write What You Hear)</h2>
+            <p class="prose mx-auto mb-4">These activities will test your ability to write Jamaican words correctly. Remember the golden rule: "write what you hear." Pay attention to special consonant rules, like using <b class="patois-word">j</b> for the 'dr' sound and <b class="patois-word">k</b> instead of 'c' or 'ck'.</p>
+            <div class="prose mx-auto mb-8">
+                <a href="URL_TO_LESSON_2" class="font-semibold text-amber-600 hover:underline">Need a refresher? Review Lesson 2: The Rules of Writing &rarr;</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="activity-card">
+                    <h3>Long Vowels Practice</h3>
+                    <p>A quick fill-in-the-blanks exercise to test your knowledge of long vowel sounds like 'aa', 'ii', and 'uu'.</p>
+                    <a href="URL_TO_ACTIVITY_1" class="nav-button mt-auto">Go to Activity &rarr;</a>
+                </div>
+
+                <div class="activity-card">
+                    <h3>Spot the Error</h3>
+                    <p>Can you find the common spelling mistakes in these sentences? A great way to test your knowledge of the rules.</p>
+                    <a href="URL_TO_ACTIVITY_3" class="nav-button mt-auto">Go to Activity &rarr;</a>
+                </div>
+
+                <div class="activity-card">
+                    <h3>Fix the Sign</h3>
+                    <p>Rewrite common signs from English into their proper Jamaican spelling. A practical test of your skills.</p>
+                    <a href="URL_TO_FIX_THE_SIGN_ACTIVITY" class="nav-button mt-auto">Go to Activity &rarr;</a>
+                </div>
+
+                 <!-- Placeholder -->
+                <div class="activity-card border-dashed">
+                    <h3 class="text-gray-400">Market Day Shopping List</h3>
+                    <p class="text-gray-500">Coming soon! A fun activity where you create a shopping list using the correct spelling for common food items.</p>
+                    <span class="nav-button bg-gray-300 cursor-not-allowed mt-auto">Coming Soon</span>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="mt-16 text-center">
+            <a href="URL_TO_YOUR_HOMEPAGE" class="nav-button bg-gray-500 hover:bg-gray-600">Back to Main Page</a>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>
