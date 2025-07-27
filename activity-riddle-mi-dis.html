@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity: Riddle Me Dis!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #f4f1eb; 
+            color: #2c2a29;
+        }
+        .page-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            border: 1px solid #e7e5e4;
+        }
+        .nav-button {
+             background-color: #007B5F;
+             color: white;
+             font-weight: 600;
+             padding: 0.75rem 1.5rem;
+             border-radius: 0.5rem;
+             text-decoration: none;
+             display: inline-block;
+        }
+        .nav-button:hover { background-color: #005a46; }
+        .patois-word { color: #d97706; font-weight: 600; }
+        .riddle-card {
+            background-color: #fafaf9;
+            border: 1px solid #e7e5e4;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+        .riddle-text {
+            font-style: italic;
+            color: #4b5563;
+        }
+        .activity-input {
+            width: 100%;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: lowercase;
+            border: 2px solid #d6d3d1;
+            border-radius: 0.375rem;
+            padding: 0.5rem;
+        }
+        .activity-input:focus {
+            outline: none;
+            border-color: #d97706;
+        }
+        .feedback-icon {
+            font-size: 1.5rem;
+            font-weight: bold;
+            width: 8rem;
+            text-align: left;
+        }
+        .feedback-correct { color: #059669; }
+        .feedback-incorrect { color: #dc2626; }
+    </style>
+</head>
+<body class="antialiased">
+
+<div id="jamaican-writing-container">
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4">
+            <h1 class="text-3xl font-bold text-gray-800">Activity: Riddle Me Dis!</h1>
+            <p class="text-gray-600">Practice Your Reading Skills Series</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <section class="page-card p-8">
+            <h2 class="text-3xl font-bold text-center mb-2">Solve the Riddle</h2>
+            <p class="text-lg text-center text-gray-600 mb-8">Read each riddle in English and type the one-word answer in Jamaican. Remember to use the correct spelling!</p>
+            
+            <div id="activity-container" class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t">
+                
+                <!-- Riddle 1 -->
+                <div class="riddle-card" data-answer="needle">
+                    <p class="riddle-text text-xl mb-4">"What has eyes and cannot see?"</p>
+                    <div class="flex items-center gap-4">
+                        <input class="activity-input" type="text" placeholder="Your answer...">
+                        <span class="feedback-icon"></span>
+                    </div>
+                </div>
+
+                <!-- Riddle 2 -->
+                <div class="riddle-card" data-answer="iej">
+                    <p class="riddle-text text-xl mb-4">"What goes up but never comes down?"</p>
+                     <div class="flex items-center gap-4">
+                        <input class="activity-input" type="text" placeholder="Your answer...">
+                        <span class="feedback-icon"></span>
+                    </div>
+                </div>
+
+                <!-- Riddle 3 -->
+                <div class="riddle-card" data-answer="shuuz">
+                    <p class="riddle-text text-xl mb-4">"I have a tongue but cannot talk. What am I?"</p>
+                     <div class="flex items-center gap-4">
+                        <input class="activity-input" type="text" placeholder="Your answer...">
+                        <span class="feedback-icon"></span>
+                    </div>
+                </div>
+                
+                <!-- Riddle 4 -->
+                <div class="riddle-card" data-answer="anansi">
+                    <p class="riddle-text text-xl mb-4">"Who makes a web but is not a spider?"</p>
+                     <div class="flex items-center gap-4">
+                        <input class="activity-input" type="text" placeholder="Your answer...">
+                        <span class="feedback-icon"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-8">
+                <button id="check-answers-btn" class="nav-button bg-amber-500 hover:bg-amber-600">Check Answers</button>
+            </div>
+        </section>
+
+        <div class="mt-12 flex justify-center items-center">
+            <a href="URL_TO_YOUR_PRACTICE_HUB" class="nav-button bg-gray-500 hover:bg-gray-600">Return to All Activities</a>
+        </div>
+    </main>
+</div>
+
+<script>
+    document.getElementById('check-answers-btn').addEventListener('click', function() {
+        const activityItems = document.querySelectorAll('#activity-container > div');
+        
+        activityItems.forEach(item => {
+            const input = item.querySelector('.activity-input');
+            const feedback = item.querySelector('.feedback-icon');
+            const correctAnswer = item.dataset.answer;
+            const userAnswer = input.value.toLowerCase().trim();
+            
+            if (userAnswer === correctAnswer) {
+                feedback.innerHTML = '✔ Correct!';
+                feedback.className = 'feedback-icon feedback-correct';
+            } else {
+                feedback.innerHTML = `✘ <span class="text-sm">Ans: ${correctAnswer}</span>`;
+                feedback.className = 'feedback-icon feedback-incorrect';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
