@@ -12,7 +12,6 @@
             background-color: #f4f1eb; 
             color: #2c2a29;
         }
-        .prose { max-width: 65ch; color: #3f3c3a; }
         .page-card {
             background-color: #ffffff;
             border-radius: 0.75rem;
@@ -74,70 +73,63 @@
     <main class="container mx-auto px-6 py-8">
         <section class="page-card p-8">
             <h2 class="text-3xl font-bold text-center mb-2">Can You Find the Mistake?</h2>
-            <p class="text-lg text-center text-gray-600 mb-8">First, read the correct version of the Lord's Prayer (Luke 11:2-4) below.</p>
+            <p class="text-lg text-center text-gray-600 mb-8">Each sentence below contains one common spelling error based on English habits. Find the incorrect word and type the correct Jamaican version in the box.</p>
             
-            <div class="prose prose-lg mx-auto bg-gray-50 p-6 rounded-lg">
-                <p>Jiizas tel dem se: “Wen unu prie, unu fi se: “‘Faada, mek piipl av nof rispek fi yu an yu niem, Mek di taim kom wen yu ruul iina evri wie. Evridie gi wi di fuud we wi niid. Paadn wi fi aal a di rang we wi du, kaa wi paadn piipl we du wi rang tu. An no mek wi fies notn we wi kaaz wi fi sin.’”</p>
+            <div id="activity-container" class="space-y-8 pt-8 border-t">
+                
+                <!-- Sentence 1 -->
+                <div class="p-6 bg-gray-50 rounded-lg" data-answer="jiizas">
+                    <p class="text-xl font-medium">"<span class="error-word">Jesus</span> tel dem se..."</p>
+                    <div class="mt-4 flex items-center gap-4">
+                        <input class="activity-input" type="text" placeholder="Correct word...">
+                        <span class="feedback-icon"></span>
+                    </div>
+                </div>
+
+                <!-- Sentence 2 -->
+                <div class="p-6 bg-gray-50 rounded-lg" data-answer="taim">
+                    <p class="text-xl font-medium">"Mek di <span class="error-word">time</span> kom wen yu ruul iina evri wie."</p>
+                     <div class="mt-4 flex items-center gap-4">
+                        <input class="activity-input" type="text" placeholder="Correct word...">
+                        <span class="feedback-icon"></span>
+                    </div>
+                </div>
+
+                <!-- Sentence 3 -->
+                <div class="p-6 bg-gray-50 rounded-lg" data-answer="fuud">
+                    <p class="text-xl font-medium">"Evridie gi wi di <span class="error-word">food</span> we wi niid."</p>
+                     <div class="mt-4 flex items-center gap-4">
+                        <input class="activity-input" type="text" placeholder="Correct word...">
+                        <span class="feedback-icon"></span>
+                    </div>
+                </div>
+
+                <!-- Sentence 4 -->
+                <div class="p-6 bg-gray-50 rounded-lg" data-answer="fies">
+                    <p class="text-xl font-medium">"An no mek wi <span class="error-word">face</span> notn we wi kaaz wi fi sin."</p>
+                     <div class="mt-4 flex items-center gap-4">
+                        <input class="activity-input" type="text" placeholder="Correct word...">
+                        <span class="feedback-icon"></span>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- Activity Section -->
-            <div id="activity-container" class="pt-10 mt-10 border-t">
-                <h2 class="text-2xl font-semibold mb-4 text-center">Correct the Spelling</h2>
-                <p class="prose mx-auto text-center mb-8">Each sentence below contains one common spelling error. Find the incorrect word and type the correct version in the box.</p>
-                
-                <div class="space-y-8">
-                    <!-- Sentence 1 -->
-                    <div class="p-6 bg-gray-50 rounded-lg" data-answer="jiizas">
-                        <p class="text-xl font-medium">"<span class="error-word">Jesus</span> tel dem se..."</p>
-                        <div class="mt-4 flex items-center gap-4">
-                            <input class="activity-input" type="text" placeholder="Correct word...">
-                            <span class="feedback-icon"></span>
-                        </div>
-                    </div>
-
-                    <!-- Sentence 2 -->
-                    <div class="p-6 bg-gray-50 rounded-lg" data-answer="taim">
-                        <p class="text-xl font-medium">"Mek di <span class="error-word">time</span> kom wen yu ruul iina evri wie."</p>
-                         <div class="mt-4 flex items-center gap-4">
-                            <input class="activity-input" type="text" placeholder="Correct word...">
-                            <span class="feedback-icon"></span>
-                        </div>
-                    </div>
-
-                    <!-- Sentence 3 -->
-                    <div class="p-6 bg-gray-50 rounded-lg" data-answer="fuud">
-                        <p class="text-xl font-medium">"Evridie gi wi di <span class="error-word">food</span> we wi niid."</p>
-                         <div class="mt-4 flex items-center gap-4">
-                            <input class="activity-input" type="text" placeholder="Correct word...">
-                            <span class="feedback-icon"></span>
-                        </div>
-                    </div>
-
-                    <!-- Sentence 4 -->
-                    <div class="p-6 bg-gray-50 rounded-lg" data-answer="fies">
-                        <p class="text-xl font-medium">"An no mek wi <span class="error-word">face</span> notn we wi kaaz wi fi sin."</p>
-                         <div class="mt-4 flex items-center gap-4">
-                            <input class="activity-input" type="text" placeholder="Correct word...">
-                            <span class="feedback-icon"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mt-8">
-                    <button id="check-answers-btn" class="nav-button bg-amber-500 hover:bg-amber-600">Check Answers</button>
-                </div>
+            <div class="text-center mt-8">
+                <button id="check-answers-btn" class="nav-button bg-amber-500 hover:bg-amber-600">Check Answers</button>
             </div>
         </section>
 
-        <div class="mt-12 flex justify-center items-center">
-            <a href="URL_TO_YOUR_PRACTICE_HUB" class="nav-button bg-gray-500 hover:bg-gray-600">Return to All Activities</a>
+        <div class="mt-12 flex justify-between items-center">
+            <a href="URL_TO_PRACTICE_HUB" class="nav-button bg-gray-500 hover:bg-gray-600">&larr; Back to All Activities</a>
+            <a href="URL_TO_YOUR_HOMEPAGE" class="font-semibold text-amber-600 hover:underline">Back to Homepage</a>
         </div>
     </main>
 </div>
 
 <script>
     document.getElementById('check-answers-btn').addEventListener('click', function() {
-        const activityItems = document.querySelectorAll('#activity-container > div > div');
+        const activityItems = document.querySelectorAll('#activity-container > div');
         
         activityItems.forEach(item => {
             const input = item.querySelector('.activity-input');
