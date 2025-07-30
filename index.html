@@ -33,42 +33,17 @@
             background-position: center;
         }
         
-        /* Gradient text for the numbers on the learning path cards */
-        .gradient-text {
-            background: linear-gradient(45deg, #FFB300, #00796B);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-        }
-
-        /* Styling for the learning path cards for a "lifted" effect */
-        .lesson-card {
+        .dashboard-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid #e2e8f0;
         }
 
-        .lesson-card:hover {
+        .dashboard-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
-        
-        /* Responsive container for the embedded video */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000;
-            border-radius: 0.75rem; /* rounded-xl */
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
         }
     </style>
 </head>
@@ -78,109 +53,86 @@
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div>
-                <a href="#" class="text-2xl font-bold text-[#00796B]">Learn Jamaican</a>
+                <a href="#" class="text-2xl font-bold text-gray-800">Learn <span class="text-[#00796B]">Jamaican</span></a>
                 <p class="text-xs text-gray-500 tracking-tight -mt-1">Read it. Write it. Own it.</p>
             </div>
             <div class="hidden md:flex space-x-8 items-center">
-                <a href="#lessons" class="text-gray-600 hover:text-[#00796B] transition-colors">Lessons</a>
-                <a href="#story" class="text-gray-600 hover:text-[#00796B] transition-colors">Our Story</a>
-                <a href="#blog" class="text-gray-600 hover:text-[#00796B] transition-colors">Blog</a>
-                <a href="#lessons" class="bg-[#FFB300] text-white font-bold py-2 px-4 rounded-full hover:bg-opacity-90 transition-all">Get Started</a>
+                <a href="URL_TO_LESSONS_PAGE" class="text-gray-600 hover:text-[#00796B] transition-colors">Lessons</a>
+                <a href="URL_TO_OUR_STORY_PAGE" class="text-gray-600 hover:text-[#00796B] transition-colors">Our Story</a>
+                <a href="URL_TO_BLOG_PAGE" class="text-gray-600 hover:text-[#00796B] transition-colors">Blog</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden text-2xl">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </button>
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-            <a href="#lessons" class="block py-2 text-gray-600 hover:text-[#00796B]">Lessons</a>
-            <a href="#story" class="block py-2 text-gray-600 hover:text-[#00796B]">Our Story</a>
-            <a href="#blog" class="block py-2 text-gray-600 hover:text-[#00796B]">Blog</a>
-            <a href="#lessons" class="block mt-2 bg-[#FFB300] text-white text-center font-bold py-2 px-4 rounded-full hover:bg-opacity-90">Get Started</a>
+            <a href="URL_TO_LESSONS_PAGE" class="block py-2 text-gray-600 hover:text-[#00796B]">Lessons</a>
+            <a href="URL_TO_OUR_STORY_PAGE" class="block py-2 text-gray-600 hover:text-[#00796B]">Our Story</a>
+            <a href="URL_TO_BLOG_PAGE" class="block py-2 text-gray-600 hover:text-[#00796B]">Blog</a>
+            <a href="lesson1.html" class="block mt-2 bg-[#FFB300] text-white text-center font-bold py-2 px-4 rounded-full hover:bg-opacity-90">Get Started</a>
         </div>
     </header>
 
     <main>
         <!-- 1. Hero Section -->
-        <section class="hero-section h-[60vh] md:h-[80vh] flex items-center justify-center text-white text-center">
+        <section class="hero-section h-[60vh] md:h-[70vh] flex items-center justify-center text-white text-center">
             <div class="px-4">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-wider" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">Unlock the Voice of Jamaica</h1>
                 <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">Learn to read, write, and speak the rich, expressive language of Jamaican Patwa.</p>
-                <a href="lesson1.html" class="mt-8 inline-block bg-[#FFB300] text-white font-bold text-lg py-3 px-8 rounded-full shadow-lg hover:scale-105 transform transition-transform duration-300">Start Your Journey</a>
+                <a href="URL_TO_OUR_STORY_PAGE" class="mt-8 inline-block bg-[#FFB300] text-white font-bold text-lg py-3 px-8 rounded-full shadow-lg hover:scale-105 transform transition-transform duration-300">Read Our Story</a>
             </div>
         </section>
 
-        <!-- 2. Learning Path Section -->
-        <section id="lessons" class="py-16 md:py-24 bg-gray-50">
+        <!-- 2. Main Content Hub -->
+        <section class="py-16 md:py-24 bg-gray-50">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#00796B]">Your Path to Fluency</h2>
-                    <p class="mt-2 text-gray-600 max-w-2xl mx-auto">Follow our structured path to master the Jamaican language, from the very basics to confident application.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#00796B]">Choose Your Path</h2>
+                    <p class="mt-2 text-gray-600 max-w-2xl mx-auto">Whether you're starting from scratch or want to practice your skills, we have a path for you.</p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Card 1: The Building Blocks -->
-                    <div class="lesson-card bg-white rounded-xl shadow-md overflow-hidden text-center p-8 flex flex-col items-center">
-                        <img src="building.jpg.jpg" alt="Building blocks representing language fundamentals" class="w-full h-48 object-cover rounded-lg mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e2e8f0/333333?text=Lesson+1+Image';">
-                        <span class="gradient-text text-7xl font-black">1</span>
-                        <h3 class="text-2xl font-bold mt-2">Learn the Building Blocks</h3>
-                        <p class="mt-4 text-gray-600 flex-grow">Begin your journey here. Master the essential sounds, words, and phrases that form the foundation of the Jamaican language.</p>
-                        <a href="lesson1.html" class="mt-6 bg-[#00796B] text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition-colors">Begin Lesson 1</a>
-                    </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Card 1: The Core Lessons -->
+                    <a href="URL_TO_LESSON_1_PAGE" class="dashboard-card p-8 text-center flex flex-col items-center">
+                        <div class="bg-[#E0F2F1] p-4 rounded-full mb-4">
+                            <svg class="w-8 h-8 text-[#00796B]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v11.494m-5.22-6.222h10.44"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v11.494m-5.22-6.222h10.44M6.75 12.125a5.25 5.25 0 1110.5 0 5.25 5.25 0 01-10.5 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold">The Core Lessons</h3>
+                        <p class="mt-2 text-gray-600 flex-grow">Start your journey with our step-by-step guide, from the alphabet to the rules of writing.</p>
+                        <span class="mt-4 font-bold text-[#00796B]">Start Learning &rarr;</span>
+                    </a>
+                    
+                    <!-- Card 2: Practice Your Skills -->
+                    <a href="URL_TO_PRACTICE_HUB" class="dashboard-card p-8 text-center flex flex-col items-center">
+                        <div class="bg-[#FFF8E1] p-4 rounded-full mb-4">
+                             <svg class="w-8 h-8 text-[#FFB300]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold">Practice Your Skills</h3>
+                        <p class="mt-2 text-gray-600 flex-grow">Ready to test your knowledge? Jump into our interactive activities and reading exercises.</p>
+                        <span class="mt-4 font-bold text-[#FFB300]">Test Yourself &rarr;</span>
+                    </a>
 
-                    <!-- Card 2: Rules for Writing -->
-                    <div class="lesson-card bg-white rounded-xl shadow-md overflow-hidden text-center p-8 flex flex-col items-center">
-                        <img src="writing.jpg.jpg" alt="A person writing in a notebook" class="w-full h-48 object-cover rounded-lg mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e2e8f0/333333?text=Lesson+2+Image';">
-                        <span class="gradient-text text-7xl font-black">2</span>
-                        <h3 class="text-2xl font-bold mt-2">Master the Rules of Writing</h3>
-                        <p class="mt-4 text-gray-600 flex-grow">Advance your skills by learning the standardized Cassidy-JLU writing system for formal communication.</p>
-                        <a href="lesson2.html" class="mt-6 bg-[#00796B] text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition-colors">View Rules</a>
-                    </div>
+                    <!-- Card 3: Our Story -->
+                    <a href="URL_TO_OUR_STORY_PAGE" class="dashboard-card p-8 text-center flex flex-col items-center">
+                        <div class="bg-gray-200 p-4 rounded-full mb-4">
+                             <svg class="w-8 h-8 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold">Our Story, Our Language</h3>
+                        <p class="mt-2 text-gray-600 flex-grow">Learn about the rich history of the Jamaican language and the pioneers who championed its use.</p>
+                        <span class="mt-4 font-bold text-gray-600">Read More &rarr;</span>
+                    </a>
 
-                    <!-- Card 3: Review and Practice -->
-                    <div class="lesson-card bg-white rounded-xl shadow-md overflow-hidden text-center p-8 flex flex-col items-center">
-                        <img src="review.jpg" alt="A person reviewing notes" class="w-full h-48 object-cover rounded-lg mb-6" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e2e8f0/333333?text=Lesson+3+Image';">
-                        <span class="gradient-text text-7xl font-black">3</span>
-                        <h3 class="text-2xl font-bold mt-2">Practice Your Skills</h3>
-                        <p class="mt-4 text-gray-600 flex-grow">Test your understanding and build fluency with our collection of exercises, quizzes, and real-world examples.</p>
-                        <a href="practice-hub.html" class="mt-6 bg-[#00796B] text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition-colors">Start Practicing</a>
-                    </div>
+                    <!-- Card 4: From the Blog -->
+                    <a href="URL_TO_BLOG_PAGE" class="dashboard-card p-8 text-center flex flex-col items-center">
+                         <div class="bg-gray-200 p-4 rounded-full mb-4">
+                             <svg class="w-8 h-8 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 2l-2-2m0 0l-2 2m2-2v10"></path></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold">From the Blog</h3>
+                        <p class="mt-2 text-gray-600 flex-grow">Explore our latest articles, cultural insights, and new practice activities.</p>
+                        <span class="mt-4 font-bold text-gray-600">View All Posts &rarr;</span>
+                    </a>
                 </div>
-            </div>
-        </section>
-
-        <!-- 3. Our Story / Our Language Section -->
-        <section id="story" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <div class="max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#00796B] mb-4">Our Story, Our Language</h2>
-                    <p class="mb-6 text-lg text-gray-700">The Jamaican language is a testament to the resilience, creativity, and spirit of our people. Born from our complex history, it has grown into a complete and expressive language, championed by cultural icons like the Hon. <strong class="text-[#333]">Louise "Miss Lou" Bennett-Coverley</strong> and formally structured by linguists like Frederic Cassidy.</p>
-                    <p class="mb-8 text-lg text-gray-700">We are dedicated to celebrating this heritage and empowering every Jamaican to read and write the language of our heart.</p>
-                    <a href="our-story.html" class="inline-block bg-[#FFB300] text-white font-bold text-lg py-3 px-8 rounded-full shadow-lg hover:scale-105 transform transition-transform duration-300">Read the Full Story</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 4. From the Blog Section -->
-        <section id="blog" class="py-16 md:py-24 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="flex justify-between items-center mb-8">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#00796B]">Latest from the Blog</h2>
-                    <a href="blog.html" class="text-[#FFB300] font-bold hover:underline hidden sm:block">View All Posts &raquo;</a>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col md:flex-row group cursor-pointer">
-                    <div class="md:w-1/2">
-                         <img src="https://placehold.co/800x600/00796b/ffffff?text=Jamaican+Culture" alt="Blog post image about Jamaican culture" class="h-64 w-full object-cover md:h-full group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-8 md:p-12 md:w-1/2 flex flex-col justify-center">
-                        <span class="text-sm font-bold text-[#00796B] uppercase">Culture</span>
-                        <h3 class="text-2xl lg:text-3xl font-bold mt-2 mb-4">Why "Fi" is One of the Most Important Words in Patwa</h3>
-                        <p class="text-gray-600 mb-6">Dive deep into the versatility of the word 'fi'. From showing possession to indicating purpose, understanding 'fi' is a major step towards true fluency.</p>
-                        <a href="post1.html#" class="bg-[#FFB300] text-white font-bold py-2 px-6 rounded-full self-start hover:bg-opacity-90 transition-colors">Read More</a>
-                    </div>
-                </div>
-                 <a href="blog.html" class="text-[#FFB300] font-bold hover:underline sm:hidden block text-center mt-8">View All Posts &raquo;</a>
             </div>
         </section>
     </main>
