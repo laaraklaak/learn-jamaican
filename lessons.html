@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons - Learn Jamaican</title>
+    
+    <!-- Tailwind CSS for rapid, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat for headings, Lato for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles to complement Tailwind */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #FDFDFD; /* Off-white background */
+            color: #333333; /* Charcoal text */
+        }
+
+        /* Applying custom fonts to headings */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .lesson-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        .cta-button {
+            background-color: #00796B;
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .cta-button:hover {
+            background-color: #004D40;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div>
+                <a href="index.html" class="text-2xl font-bold text-gray-800">Learn <span class="text-[#00796B]">Jamaican</span></a>
+                <p class="text-xs text-gray-500 tracking-tight -mt-1">Read it. Write it. Own it.</p>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="lessons.html" class="text-gray-600 hover:text-[#00796B] transition-colors">Lessons</a>
+                <a href="our-story.html" class="text-gray-600 hover:text-[#00796B] transition-colors">Our Story</a>
+                <a href="blog.html" class="text-gray-600 hover:text-[#00796B] transition-colors">Blog</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="lessons.html" class="block py-2 text-gray-600 hover:text-[#00796B]">Lessons</a>
+            <a href="our-story.html" class="block py-2 text-gray-600 hover:text-[#00796B]">Our Story</a>
+            <a href="blog.html" class="block py-2 text-gray-600 hover:text-[#00796B]">Blog</a>
+        </div>
+    </header>
+
+    <main class="bg-gray-50">
+        <!-- Learning Path Section -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#00796B]">Your Path to Fluency</h2>
+                    <p class="mt-2 text-gray-600 max-w-2xl mx-auto">Follow our structured path to master the Jamaican language, from the very basics to confident application.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1: The Building Blocks -->
+                    <div class="lesson-card bg-white rounded-xl shadow-md overflow-hidden text-center p-8 flex flex-col items-center">
+                        <img src="https://placehold.co/400x300/e2e8f0/333333?text=Lesson+1" alt="Building blocks representing language fundamentals" class="w-full h-48 object-cover rounded-lg mb-6">
+                        <h3 class="text-2xl font-bold mt-2">Learn the Building Blocks</h3>
+                        <p class="mt-4 text-gray-600 flex-grow">Begin your journey here. Master the alphabet and the essential vowel sounds that form the foundation of the language.</p>
+                        <a href="lesson1.html" class="mt-6 bg-[#00796B] text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition-colors">Begin Lesson 1</a>
+                    </div>
+
+                    <!-- Card 2: Rules for Writing -->
+                    <div class="lesson-card bg-white rounded-xl shadow-md overflow-hidden text-center p-8 flex flex-col items-center">
+                        <img src="https://placehold.co/400x300/e2e8f0/333333?text=Lesson+2" alt="A person writing in a notebook" class="w-full h-48 object-cover rounded-lg mb-6">
+                        <h3 class="text-2xl font-bold mt-2">Master the Rules of Writing</h3>
+                        <p class="mt-4 text-gray-600 flex-grow">Advance your skills by learning the standardized writing system for consonants, word endings, and special letters.</p>
+                        <a href="lesson2.html" class="mt-6 bg-[#00796B] text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition-colors">Begin Lesson 2</a>
+                    </div>
+
+                    <!-- Card 3: Review and Practice -->
+                    <div class="lesson-card bg-white rounded-xl shadow-md overflow-hidden text-center p-8 flex flex-col items-center">
+                        <img src="https://placehold.co/400x300/e2e8f0/333333?text=Review" alt="A person reviewing notes" class="w-full h-48 object-cover rounded-lg mb-6">
+                        <h3 class="text-2xl font-bold mt-2">Final Review & Practice</h3>
+                        <p class="mt-4 text-gray-600 flex-grow">Solidify your knowledge with a comprehensive review, a final quiz, and a link to all our practice activities.</p>
+                        <a href="final-review.html" class="mt-6 bg-[#FFB300] text-white font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition-colors">Start Review</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#333333] text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-bold text-lg text-white">Learn Jamaican</p>
+            <div class="flex justify-center space-x-6 my-4">
+                <a href="lessons.html" class="hover:text-white">Lessons</a>
+                <a href="our-story.html" class="hover:text-white">Our Story</a>
+                <a href="blog.html" class="hover:text-white">Blog</a>
+                <a href="#" class="hover:text-white">Contact</a>
+            </div>
+            <p class="text-sm text-gray-400">&copy; 2025 Learn Jamaican. All Rights Reserved. Big up yuself!</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
