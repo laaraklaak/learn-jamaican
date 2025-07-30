@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Review - Learn Jamaican</title>
+    
+    <!-- Tailwind CSS for rapid, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat for headings, Lato for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles to complement Tailwind */
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #FDFDFD;
+            color: #333333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .page-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .nav-button {
+             background-color: #00796B;
+             color: white;
+             font-weight: 600;
+             padding: 0.75rem 1.5rem;
+             border-radius: 9999px;
+             text-decoration: none;
+             display: inline-block;
+             transition: transform 0.2s, background-color 0.2s;
+        }
+        .nav-button:hover {
+            background-color: #004D40;
+            transform: scale(1.05);
+        }
+        .patois-word { color: #D97706; font-weight: 700; }
+        .quiz-question-card {
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+        }
+        .activity-input {
+            width: 100%;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: lowercase;
+            border: 2px solid #d6d3d1;
+            border-radius: 0.375rem;
+            padding: 0.5rem;
+            margin-top: 1rem;
+        }
+        .activity-input:focus {
+            outline: none;
+            border-color: #FFB300;
+        }
+        .feedback-text {
+            font-size: 1.125rem;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 0.75rem;
+            height: 1.5rem;
+        }
+        .feedback-correct { color: #059669; }
+        .feedback-incorrect { color: #dc2626; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div>
+                <a href="index.html" class="text-2xl font-bold text-gray-800">Learn <span class="text-[#00796B]">Jamaican</span></a>
+                <p class="text-xs text-gray-500 tracking-tight -mt-1">Read it. Write it. Own it.</p>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="lessons.html" class="text-gray-600 hover:text-[#00796B] transition-colors">Lessons</a>
+                <a href="our-story.html" class="text-gray-600 hover:text-[#00796B] transition-colors">Our Story</a>
+                <a href="blog.html" class="text-gray-600 hover:text-[#00796B] transition-colors">Blog</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <a href="lessons.html" class="block py-2 text-gray-600 hover:text-[#00796B]">Lessons</a>
+             <a href="our-story.html" class="block py-2 text-gray-600 hover:text-[#00796B]">Our Story</a>
+             <a href="blog.html" class="block py-2 text-gray-600 hover:text-[#00796B]">Blog</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="page-card">
+                    <h2 class="text-3xl font-bold text-center text-[#00796B]">Final Review Quiz</h2>
+                    <p class="prose mx-auto text-center mt-2 mb-12">Test your knowledge of all the rules you've learned. Write your answer for each question in the box below it.</p>
+                    
+                    <div id="quiz-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="quiz-question-card" data-answer="rait wa yu ier"><p class="font-semibold">1. What is the golden rule of writing Jamaican?</p><input class="activity-input" type="text"><p class="feedback-text"></p></div>
+                        <div class="quiz-question-card" data-answer="aa"><p class="font-semibold">2. How do you write the long 'a' sound, like in "father"?</p><input class="activity-input" type="text"><p class="feedback-text"></p></div>
+                        <div class="quiz-question-card" data-answer="ai"><p class="font-semibold">3. Which diphthong makes the 'eye' sound, like in "try"?</p><input class="activity-input" type="text"><p class="feedback-text"></p></div>
+                        <div class="quiz-question-card" data-answer="kw"><p class="font-semibold">4. The letter 'q' is never used. What two letters replace it?</p><input class="activity-input" type="text"><p class="feedback-text"></p></div>
+                        <div class="quiz-question-card" data-answer="jres"><p class="font-semibold">5. How would you write the English word "dress"?</p><input class="activity-input" type="text"><p class="feedback-text"></p></div>
+                        <div class="quiz-question-card" data-answer="jork"><p class="font-semibold">6. How would you write the English word "jerk"?</p><input class="activity-input" type="text"><p class="feedback-text"></p></div>
+                        <div class="quiz-question-card" data-answer="ch, sh, zh, hn"><p class="font-semibold">7. The letter 'h' is never used by itself. Name the four blends it is used in.</p><input class="activity-input" type="text"><p class="feedback-text"></p></div>
+                        <div class="quiz-question-card" data-answer="bak"><p class="font-semibold">8. How would you write the English word "back"?</p><input class="activity-input" type="text"><p class="feedback-text"></p></div>
+                        <div class="quiz-question-card" data-answer="sing vs fing-ga"><p class="font-semibold">9. What is the difference between how you write "sing" and "finger"?</p><input class="activity-input" type="text"><p class="feedback-text"></p></div>
+                        <div class="quiz-question-card" data-answer="moni"><p class="font-semibold">10. How would you write the English word "money"?</p><input class="activity-input" type="text"><p class="feedback-text"></p></div>
+                    </div>
+
+                    <div class="text-center mt-12">
+                        <button id="check-answers-btn" class="bg-[#FFB300] text-white font-bold py-3 px-6 rounded-full hover:bg-opacity-90 transition-colors text-lg">Check My Answers</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <div class="container mx-auto px-6 py-8 flex justify-between items-center">
+            <a href="lesson2.html" class="nav-button bg-gray-500 text-white hover:bg-gray-600">&larr; Previous Lesson</a>
+            <a href="practice-hub.html" class="nav-button">More Practice &rarr;</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#333333] text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-bold text-lg text-white">Learn Jamaican</p>
+            <div class="flex justify-center space-x-6 my-4">
+                <a href="lessons.html" class="hover:text-white">Lessons</a>
+                <a href="our-story.html" class="hover:text-white">Our Story</a>
+                <a href="blog.html" class="hover:text-white">Blog</a>
+                <a href="#" class="hover:text-white">Contact</a>
+            </div>
+            <p class="text-sm text-gray-400">&copy; 2025 Learn Jamaican. All Rights Reserved. Big up yuself!</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Quiz functionality
+        document.getElementById('check-answers-btn').addEventListener('click', function() {
+            const quizItems = document.querySelectorAll('#quiz-container > div');
+            quizItems.forEach(item => {
+                const input = item.querySelector('.activity-input');
+                const feedback = item.querySelector('.feedback-text');
+                const correctAnswer = item.dataset.answer;
+                const userAnswer = input.value.toLowerCase().trim().replace(/ /g, ''); // Remove spaces for comparison
+
+                if (userAnswer === correctAnswer.replace(/ /g, '')) {
+                    feedback.innerHTML = '✔ Correct!';
+                    feedback.className = 'feedback-text feedback-correct';
+                } else {
+                    feedback.innerHTML = `✘ <span class="text-sm">Ans: ${correctAnswer}</span>`;
+                    feedback.className = 'feedback-text feedback-incorrect';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
